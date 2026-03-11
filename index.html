@@ -11,7 +11,43 @@
             --dark-bg: #050505;
             --card-bg: #111;
         }
+/* সাইড মেনু স্টাইল */
+.nav-menu {
+    position: fixed; 
+    top: 0; 
+    right: -100%; 
+    width: 260px; 
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98); 
+    border-left: 2px solid var(--neon-cyan);
+    display: flex; 
+    flex-direction: column; 
+    padding: 80px 30px; 
+    gap: 0; 
+    transition: 0.4s; 
+    z-index: 999; 
+    backdrop-filter: blur(10px);
+}
 
+/* মেনু যখন একটিভ হবে */
+.nav-menu.active { 
+    right: 0; 
+}
+
+/* মেনুর ভেতরের লিঙ্কগুলোর ডিজাইন */
+.nav-menu a { 
+    color: #fff !important; 
+    text-decoration: none !important; 
+    font-size: 1.1rem; 
+    padding: 15px 0; 
+    border-bottom: 1px solid #222; 
+    display: block; 
+    text-align: left;
+}
+
+.nav-menu a:hover {
+    color: var(--neon-cyan) !important;
+}
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
@@ -198,4 +234,5 @@
 
 </body>
 </html>
+
 
