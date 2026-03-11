@@ -3,75 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOSHAIRHAT FASTEST INTERNET</title>
+    <title> GOSHAIRHAT FASTEST INTERNET</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
     <style>
-       :root {
+        :root {
             --neon-cyan: #00e5ff;
             --dark-bg: #050505;
             --card-bg: #111;
         }
 
-        /* সাইড মেনু স্টাইল */
-        .nav-menu {
-            position: fixed; 
-            top: 0; 
-            right: -100%; 
-            width: 260px; 
-            height: 100vh;
-            background: rgba(10, 10, 10, 0.98); 
-            border-left: 2px solid var(--neon-cyan);
-            display: flex; 
-            flex-direction: column; 
-            padding: 80px 30px; 
-            gap: 0; 
-            transition: 0.4s; 
-            z-index: 999; 
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-menu.active { 
-            right: 0; 
-        }
-
-        .nav-menu a { 
-            color: #fff !important; 
-            text-decoration: none !important; 
-            font-size: 1.1rem; 
-            padding: 15px 0; 
-            border-bottom: 1px solid #222; 
-            display: block; 
-            text-align: left;
-        }
-
-        .nav-menu a:hover {
-            color: var(--neon-cyan) !important;
-        }
-
-        /* ৩-ডট মেনু বাটন স্টাইল */
-        .menu-toggle {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            z-index: 1001;
-        }
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: var(--neon-cyan);
-            transition: 0.3s;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        
         body { 
             background-color: var(--dark-bg); 
             color: #ffffff; 
             font-family: 'Hind Siliguri', sans-serif; 
+            overflow-x: hidden;
         }
 
-        /* হেডার ও লোগো */
+        /* হেডার */
         header { 
             background-color: rgba(0, 0, 0, 0.95); 
             padding: 15px 5%; 
@@ -79,176 +29,125 @@
             justify-content: space-between; 
             align-items: center; 
             border-bottom: 2px solid var(--neon-cyan); 
-            position: sticky; top: 0; z-index: 100;
-        }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-img { width: 50px; height: 50px; border-radius: 8px; box-shadow: 0 0 10px var(--neon-cyan); }
-        .brand-name { 
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem; 
-            color: var(--neon-cyan); 
-            text-transform: uppercase;
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        /* হিরো সেকশন */
-        .hero { 
-            text-align: center; 
-            padding: 120px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            border-bottom: 1px solid #222;
-        }
-        .hero h1 { font-size: 3rem; color: var(--neon-cyan); margin-bottom: 20px; text-shadow: 0 0 15px var(--neon-cyan); }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-img { width: 45px; height: auto; filter: drop-shadow(0 0 5px var(--neon-cyan)); border-radius: 5px; }
+        .brand-name { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--neon-cyan); text-transform: uppercase; }
 
-        /* প্যাকেজ সেকশন */
-        .packages-section { padding: 80px 5%; text-align: center; }
-        .package-card { 
-            background-color: var(--card-bg); 
-            border: 1px solid #222; 
-            display: inline-block;
-            margin: 15px;
-            padding: 40px 30px; 
-            width: 300px; 
-            border-radius: 20px;
-            transition: 0.4s ease;
+        /* ৩-ডট বা হ্যামবার্গার মেনু বাটন */
+        .menu-toggle {
+            display: flex; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001;
         }
-        .package-card:hover { 
-            border-color: var(--neon-cyan); 
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+        .bar { width: 25px; height: 3px; background-color: var(--neon-cyan); transition: 0.3s; border-radius: 2px; }
+
+        /* ড্রপ-ডাউন/সাইড মেনু */
+        .nav-menu {
+            position: fixed; top: 0; right: -100%; width: 260px; height: 100vh;
+            background: rgba(10, 10, 10, 0.98); border-left: 2px solid var(--neon-cyan);
+            display: flex; flex-direction: column; padding: 100px 30px; gap: 5px;
+            transition: 0.4s ease-in-out; z-index: 999; backdrop-filter: blur(10px);
         }
-        .pkg-speed { font-size: 3rem; color: var(--neon-cyan); font-weight: bold; margin-bottom: 10px; }
-        .order-btn { 
-            display: block; 
-            background: var(--neon-cyan); 
-            color: #000; 
-            padding: 12px; 
-            margin-top: 25px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 8px; 
+
+        /* মেনু যখন ওপেন হবে */
+        .nav-menu.active { right: 0; }
+
+        .nav-menu a { 
+            color: #fff !important; text-decoration: none !important; font-size: 1.1rem; 
+            padding: 15px 0; border-bottom: 1px solid #222; display: block;
             transition: 0.3s;
         }
-        .order-btn:hover { background: #fff; box-shadow: 0 0 20px #fff; }
+        .nav-menu a:hover { color: var(--neon-cyan) !important; padding-left: 10px; }
 
-        /* ফুটার / ঠিকানা */
-        footer {
-            background-color: #000;
-            padding: 50px 5%;
-            border-top: 1px solid #222;
-            text-align: center;
-        }
-        .address-box h3 { color: var(--neon-cyan); margin-bottom: 15px; text-transform: uppercase; }
-        .address-box p { color: #aaa; line-height: 1.6; }
+        /* হিরো ও প্যাকেজ */
+        .hero { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1920'); background-size: cover; }
+        .hero h1 { font-size: 2.2rem; color: var(--neon-cyan); text-shadow: 0 0 15px var(--neon-cyan); }
 
-        /* হোয়াটসঅ্যাপ ফ্লোটিং বাটন */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 0 20px #25d366; }
-        .whatsapp-float img { width: 35px; height: 35px; }
+        .packages-section { padding: 60px 5%; text-align: center; }
+        .package-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .package-card { background: var(--card-bg); border: 1px solid #222; padding: 40px 30px; border-radius: 20px; transition: 0.4s; }
+        .package-card:hover { border-color: var(--neon-cyan); transform: translateY(-10px); }
+        .pkg-speed { font-size: 3rem; color: var(--neon-cyan); font-weight: bold; }
 
+        .order-btn { display: block; background: var(--neon-cyan); color: #000; padding: 12px; margin-top: 25px; text-decoration: none; font-weight: bold; border-radius: 8px; }
+
+        footer { background: #000; padding: 40px; text-align: center; border-top: 1px solid #222; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; }
     </style>
 </head>
 <body>
 
     <header>
-    <div class="logo-area">
-        <img src="gofi.jpg" alt="GoFi Logo" class="logo-img"> 
-        <div class="brand-name">GOSHAIRHAT FASTEST INTERNET</div>
-    </div>
-   <nav class="nav-menu" id="sideNav">
-    <a href="#" onclick="toggleMenu()">Home</a>
-    <a href="#packages" onclick="toggleMenu()">Packages</a>
-    <a href="#" onclick="toggleMenu()">Our FTP Servers</a>
-    <a href="#" onclick="toggleMenu()">Login Client Panel</a>
-    <a href="#contact" onclick="toggleMenu()">Contact Us</a>
-</nav>
-</header>
+        <div class="logo-area">
+            <img src="gofi.jpg" alt="Logo" class="logo-img"> 
+            <div class="brand-name">GOSHAIRHAT  FASTEST  INTERNET</div>
+        </div>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
 
-<style>
-    /* লোগোর জন্য বিশেষ স্টাইল */
-    .logo-img { 
-        width: 50px; /* লোগোর সাইজ একটু বড় করা হয়েছে */
-        height: auto; 
-        border-radius: 5px; 
-        /* লোগোর চারপাশ দিয়ে হালকা নিওন গ্লো ইফেক্ট */
-        filter: drop-shadow(0 0 5px var(--neon-cyan));
-    }
-    
-    .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 17px;
-    }
-</style>
+        <nav class="nav-menu" id="sideNav">
+            <a href="#" onclick="toggleMenu()">Home</a>
+            <a href="#packages" onclick="toggleMenu()">Packages</a>
+            <a href="#" onclick="toggleMenu()">Our FTP Server</a>
+            <a href="#" onclick="toggleMenu()">Client Login</a>
+            <a href="#contact" onclick="toggleMenu()">Contact Us</a>
+        </nav>
+    </header>
 
     <section class="hero">
         <h1>GOSHAIRHAT FASTEST INTERNET</h1>
         <p>গোসাইরহাটের ১ নম্বর সুপারফাস্ট ফাইবার অপটিক ইন্টারনেট সার্ভিস।</p>
-         <p>আমরা দিচ্ছি গোসাইরহাটের সবচেয়ে দ্রুতগতির এবং বাফারলেস ইন্টারনেট অভিজ্ঞতা।</p>
     </section>
 
-    <section class="packages-section">
-        <div class="package-card">
-            <div class="pkg-speed">16 Mbps</div>
-            <p style="color: #08fd00;">Starter Pack</p>
-            <h2 style="margin: 15px 0;">৳ ৫০০ <small>/ মাস</small></h2>
-            <a href="#" class="order-btn">অর্ডার করুন</a>
-        </div>
-        <div class="package-card">
-            <div class="pkg-speed">25 Mbps</div>
-            <p style="color: #2bff00;">Gamer Pack</p>
-            <h2 style="margin: 15px 0;">৳ ৮০০ <small>/ মাস</small></h2>
-            <a href="#" class="order-btn">অর্ডার করুন</a>
-        </div>
-        <div class="package-card">
-            <div class="pkg-speed">40 Mbps</div>
-            <p style="color: #18ff03;">Family Pack</p>
-            <h2 style="margin: 15px 0;">৳ ১০০০ <small>/ মাস</small></h2>
-            <a href="#" class="order-btn">অর্ডার করুন</a>
-        </div>
-        <div class="package-card">
-            <div class="pkg-speed">50 Mbps</div>
-            <p style="color: #f3cf00;">Premium Pack</p>
-            <h2 style="margin: 15px 0;">৳ ১২০০ <small>/ মাস</small></h2>
-            <a href="#" class="order-btn">অর্ডার করুন</a>
+    <section class="packages-section" id="packages">
+        <div class="package-group">
+            <div class="package-card">
+                <div class="pkg-speed">16 Mbps</div>
+                <p style="color: #08fd00;">Starter Pack</p>
+                <h2 style="margin: 15px 0;">৳ ৫০০</h2>
+                <a href="#" class="order-btn">অর্ডার করুন</a>
+            </div>
+            <div class="package-card">
+                <div class="pkg-speed">25 Mbps</div>
+                <p style="color: #2bff00;">Gamer Pack</p>
+                <h2 style="margin: 15px 0;">৳ ৮০০</h2>
+                <a href="#" class="order-btn">অর্ডার করুন</a>
+            </div>
+            <div class="package-card">
+                <div class="pkg-speed">40 Mbps</div>
+                <p style="color: #2bff00;">Gamer Pack</p>
+                <h2 style="margin: 15px 0;">৳ ১০০০</h2>
+                <a href="#" class="order-btn">অর্ডার করুন</a>
+            </div>
+                        <div class="package-card">
+                <div class="pkg-speed">50 Mbps</div>
+                <p style="color: #2bff00;">Gamer Pack</p>
+                <h2 style="margin: 15px 0;">৳ ১২০০</h2>
+                <a href="#" class="order-btn">অর্ডার করুন</a>
+            </div>
+            
         </div>
     </section>
 
-    <footer>
-        <div class="address-box">
-            <h3>আমাদের ঠিকানা</h3>
-            <p> GOSHAIRHAT FASTEST INTERNET</p>
-            <p>সদর রোড, গোসাইরহাট বাজার, শরীয়তপুর</p>
-            <p>হেল্পলাইন: +8801650-000082</p>
-            <p style="margin-top: 20px; font-size: 14px; color: #555;">© 2026 GOSHAIRHAT FASTEST INTERNET - All Rights Reserved</p>
-        </div>
+    <footer id="contact">
+        <p>সদর রোড, গোসাইরহাট বাজার, শরীয়তপুর</p>
+        <p>হেল্পলাইন: +8801650-000082</p>
     </footer>
 
-    <a href="https://wa.me/8801650000082?text=Hello! I want to know about your internet packages." class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <a href="https://wa.me/8801650000082" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
     </a>
 
+    <script>
+        function toggleMenu() {
+            const sideNav = document.getElementById('sideNav');
+            sideNav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
-
-
-
