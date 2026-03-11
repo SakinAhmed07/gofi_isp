@@ -6,50 +6,65 @@
     <title>GOSHAIRHAT FASTEST INTERNET</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
+       :root {
             --neon-cyan: #00e5ff;
             --dark-bg: #050505;
             --card-bg: #111;
         }
-/* সাইড মেনু স্টাইল */
-.nav-menu {
-    position: fixed; 
-    top: 0; 
-    right: -100%; 
-    width: 260px; 
-    height: 100vh;
-    background: rgba(10, 10, 10, 0.98); 
-    border-left: 2px solid var(--neon-cyan);
-    display: flex; 
-    flex-direction: column; 
-    padding: 80px 30px; 
-    gap: 0; 
-    transition: 0.4s; 
-    z-index: 999; 
-    backdrop-filter: blur(10px);
-}
 
-/* মেনু যখন একটিভ হবে */
-.nav-menu.active { 
-    right: 0; 
-}
+        /* সাইড মেনু স্টাইল */
+        .nav-menu {
+            position: fixed; 
+            top: 0; 
+            right: -100%; 
+            width: 260px; 
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.98); 
+            border-left: 2px solid var(--neon-cyan);
+            display: flex; 
+            flex-direction: column; 
+            padding: 80px 30px; 
+            gap: 0; 
+            transition: 0.4s; 
+            z-index: 999; 
+            backdrop-filter: blur(10px);
+        }
 
-/* মেনুর ভেতরের লিঙ্কগুলোর ডিজাইন */
-.nav-menu a { 
-    color: #fff !important; 
-    text-decoration: none !important; 
-    font-size: 1.1rem; 
-    padding: 15px 0; 
-    border-bottom: 1px solid #222; 
-    display: block; 
-    text-align: left;
-}
+        .nav-menu.active { 
+            right: 0; 
+        }
 
-.nav-menu a:hover {
-    color: var(--neon-cyan) !important;
-}
+        .nav-menu a { 
+            color: #fff !important; 
+            text-decoration: none !important; 
+            font-size: 1.1rem; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #222; 
+            display: block; 
+            text-align: left;
+        }
+
+        .nav-menu a:hover {
+            color: var(--neon-cyan) !important;
+        }
+
+        /* ৩-ডট মেনু বাটন স্টাইল */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--neon-cyan);
+            transition: 0.3s;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body { 
             background-color: var(--dark-bg); 
             color: #ffffff; 
@@ -234,5 +249,6 @@
 
 </body>
 </html>
+
 
 
