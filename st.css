@@ -133,7 +133,7 @@ header {
 
 .slider {
     display: flex;
-    width: 400%;
+    width: 100%;
     animation: slide-animation 18s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
@@ -145,7 +145,7 @@ header {
 
 .slide img {
     width: 100%;
-    height: 470px;
+    height: 700px;
     object-fit: cover;
     object-position: center;
     display: block;
