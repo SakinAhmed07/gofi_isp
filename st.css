@@ -11,6 +11,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 body {
     background-color: var(--dark-bg);
