@@ -64,6 +64,7 @@ header {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    transition: transform 0.35s ease;
 }
 
 .bar {
@@ -71,46 +72,13 @@ header {
     height: 3px;
     background: var(--neon-cyan);
     border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.35s ease, background 0.35s ease;
 }
 
 .header-right {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: rgba(5, 5, 5, 0.98);
-    border-left: 2px solid var(--neon-cyan);
-    display: flex;
-    flex-direction: column;
-    padding: 80px 30px;
-    transition: 0.4s ease;
-    z-index: 999;
-}
-
-.nav-menu.active {
-    right: 0;
-}
-
-.nav-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 15px 0;
-    border-bottom: 1px solid #222;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.nav-menu a:hover {
-    color: var(--neon-cyan);
-    padding-left: 10px;
 }
 
 
@@ -165,7 +133,7 @@ header {
 
 .slider {
     display: flex;
-    width: 90%;
+    width: 400%;
     animation: slide-animation 18s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
@@ -714,6 +682,95 @@ footer {
     color: #ccc;
 }
 
+.payment-highlight {
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.08), rgba(0, 229, 255, 0.05));
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 18px;
+    padding: 20px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s ease;
+}
+
+.payment-highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 255, 0, 0.15);
+    border-color: rgba(0, 255, 0, 0.4);
+}
+
+.payment-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #00ff00, #00e5ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.bkash-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+
+.bkash-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #e2136e 50%, #0066cc 50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.bkash-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.bkash-text {
+    position: relative;
+    z-index: 3;
+    font-size: 0.65rem;
+    color: #e2136e;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.payment-text h4 {
+    color: #00ff00;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.payment-text p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
 .about-cards {
     display: grid;
     gap: 18px;
@@ -813,6 +870,34 @@ footer {
     }
     .about-highlight {
         padding: 18px;
+    }
+    .payment-highlight {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 18px;
+    }
+    .payment-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    .bkash-icon::before {
+        width: 30px;
+        height: 30px;
+    }
+    .bkash-icon::after {
+        width: 20px;
+        height: 20px;
+    }
+    .bkash-text {
+        font-size: 0.55rem;
+    }
+    .payment-text h4 {
+        font-size: 1rem;
+    }
+    .payment-text p {
+        font-size: 0.85rem;
     }
 }
 
@@ -1251,20 +1336,48 @@ footer {
     right: -100%;
     width: 300px;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(15px);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.98), rgba(0, 0, 0, 0.95));
+    backdrop-filter: blur(20px);
     /* ঝাপসা ব্যাকগ্রাউন্ড */
     border-left: 2px solid var(--neon-cyan);
     display: flex;
     flex-direction: column;
-    padding: 100px 40px;
+    padding: 100px 40px 40px;
     gap: 15px;
-    transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+    opacity: 0;
     z-index: 999;
+    box-shadow: -10px 0 30px rgba(0, 229, 255, 0.1);
 }
 
 .nav-menu.active {
     right: 0;
+    opacity: 1;
+}
+
+.nav-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: var(--neon-cyan);
+    font-size: 1.2rem;
+}
+
+.nav-close-btn:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
 }
 
 
@@ -1539,7 +1652,7 @@ footer {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
 }
 
 
@@ -1579,8 +1692,7 @@ footer {
 
 @media (max-width: 600px) {
     .nav-app-btn {
-        display: none;
-        /* মোবাইলে অ্যাপ ডাউনলোড বাটন লুকানো */
+        /* মোবাইলে অ্যাপ ডাউনলোড বাটন দেখানো হবে */
     }
 }
 
@@ -1606,14 +1718,14 @@ footer {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 998;
-    display: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .menu-overlay.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
 }
 
 
@@ -1808,5 +1920,135 @@ footer {
     }
     .coverage-card p {
         font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 4%;
+    }
+    .hero {
+        padding: 60px 16px 30px;
+        min-height: 360px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .slider-container {
+        width: 95%;
+        margin: 30px auto 60px;
+    }
+    .slide img {
+        height: 420px;
+    }
+    .features-grid-system,
+    .gaming-grid,
+    .creator-grid,
+    .coverage-grid,
+    .about-grid,
+    .package-group {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .nav-menu {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px 3%;
+    }
+    .header-right {
+        gap: 14px;
+    }
+    .logo-area {
+        gap: 10px;
+    }
+    .hero {
+        padding: 50px 14px 24px;
+    }
+    .hero-text {
+        width: 100%;
+    }
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+    .slider-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 24px auto 50px;
+    }
+    .slide img {
+        height: 340px;
+    }
+    .nav-app-btn {
+        padding: 10px 12px;
+    }
+    .nav-app-btn span {
+        display: none;
+    }
+    .menu-toggle {
+        order: 1;
+    }
+    .nav-menu {
+        padding: 90px 20px;
+    }
+    .nav-menu a {
+        font-size: 1rem;
+    }
+    .partner-track {
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 320px;
+        padding: 40px 12px 20px;
+    }
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+    .slide img {
+        height: 280px;
+    }
+    .slider-container {
+        margin: 20px auto 40px;
+    }
+    .menu-toggle {
+        transform: scale(0.95);
+    }
+    .nav-menu {
+        width: 100%;
+        max-width: 100%;
+        padding: 100px 18px;
+    }
+    .package-card,
+    .gaming-card,
+    .creator-card,
+    .coverage-card,
+    .partner-card,
+    .team-card,
+    .about-card {
+        min-width: auto;
+    }
+    .package-group {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 25px 4%;
+    }
+    .package-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
