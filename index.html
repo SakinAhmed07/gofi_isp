@@ -45,6 +45,9 @@
             </div>
         </div>
         <nav class="nav-menu" id="sideNav">
+            <div class="nav-close-btn" onclick="closeMenu()">
+                <i class="fas fa-times"></i>
+            </div>
             <a onclick="showSection('home-content')">
                 <i class="fas fa-home"></i> Home
             </a>
@@ -65,9 +68,6 @@
             </a>
             <a onclick="showSection('about-page')">
                 <i class="fas fa-info-circle"></i> About Us
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=top.netbillingbd.netbillingbd&pcampaignid=web_share" target="_blank" class="nav-app-btn">
-                <i class="fab fa-google-play"></i> <span>App Download</span>
             </a>
         </nav>
     </header>
@@ -395,6 +395,35 @@
                         <div class="about-highlight">
                             <h4>কেন GO-FI?</h4>
                             <p>আমাদের লাইন সরাসরি ফাইবার কেয়াবলে চলে। অক্সিলিয়ারি নেটওয়ার্ক নয়, তাই সঙ্কোচনের ঝুঁকি খুব কম। এর ফলে আপনি পান দৃঢ় সংযোগ, কম প্যাকেট লস এবং ব্যাকআপ সাপোর্ট।</p>
+                        </div>
+
+                        <div class="payment-highlight">
+                            <div class="payment-icon">
+                                <svg class="bkash-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Outer circle with gradient -->
+                                    <defs>
+                                        <linearGradient id="bkashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="50%" style="stop-color:#e2136e;stop-opacity:1" />
+                                            <stop offset="50%" style="stop-color:#0066cc;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="50" cy="50" r="45" fill="url(#bkashGradient)" stroke="#fff" stroke-width="2"/>
+                                    
+                                    <!-- Inner white circle -->
+                                    <circle cx="50" cy="50" r="35" fill="#fff"/>
+                                    
+                                    <!-- bKash text -->
+                                    <text x="50" y="45" text-anchor="middle" fill="#e2136e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">bKash</text>
+                                    
+                                    <!-- Small decorative elements -->
+                                    <circle cx="30" cy="35" r="2" fill="#e2136e"/>
+                                    <circle cx="70" cy="35" r="2" fill="#0066cc"/>
+                                </svg>
+                            </div>
+                            <div class="payment-text">
+                                <h4>পেমেন্ট করুন bKash এ</h4>
+                                <p>আমাদের সার্ভিসের জন্য সহজেই bKash এর মাধ্যমে পেমেন্ট করুন। দ্রুত, নিরাপদ এবং সহজ পদ্ধতি।</p>
+                            </div>
                         </div>
                     </div>
 
